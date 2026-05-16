@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Block 175 — 325 N Church Ave Tucson, AZ 85701</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream:     #F7F4EE;
+      --warm:      #EDE8DF;
+      --stone:     #C9BFA8;
+      --ink:       #1C1A17;
+      --ink-mid:   #4A4640;
+      --ink-mute:  #8A837A;
+      --gold:      #B8963E;
+      --gold-lt:   #D4AC58;
+      --gold-bg:   rgba(184,150,62,0.08);
+      --white:     #FFFFFF;
+      --border:    rgba(100,90,76,0.15);
+      --border-md: rgba(100,90,76,0.25);
+      --shadow-sm: 0 2px 8px rgba(28,26,23,0.06);
+      --shadow-md: 0 8px 32px rgba(28,26,23,0.10);
+      --r: 10px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(184,150,62,0.07) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px 100px;
+    }
+
+    /* PAGE HEADER */
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 48px 0 36px;
+      border-bottom: 1px solid var(--border-md);
+      margin-bottom: 48px;
+      animation: fadeDown 0.7s ease both;
+    }
+    .doc-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--stone);
+      font-weight: 500;
+    }
+    header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+    }
+    header h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+    .header-sub {
+      font-size: 0.82rem;
+      color: var(--ink-mute);
+      margin-top: 2px;
+    }
+
+    /* SERIES BLOCK */
+    .series {
+      margin-bottom: 56px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .series:nth-of-type(1) { animation-delay: 0.05s; }
+    .series:nth-of-type(2) { animation-delay: 0.10s; }
+    .series:nth-of-type(3) { animation-delay: 0.15s; }
+    .series:nth-of-type(4) { animation-delay: 0.20s; }
+    .series:nth-of-type(5) { animation-delay: 0.25s; }
+    .series:nth-of-type(6) { animation-delay: 0.30s; }
+
+    .series-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .series-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--gold-bg);
+      border: 1px solid rgba(184,150,62,0.25);
+      border-radius: 100px;
+      padding: 3px 12px;
+      white-space: nowrap;
+    }
+    .series-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.01em;
+    }
+    .series-count {
+      margin-left: auto;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    /* VIDEO GRID */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .video-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    }
+    .video-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-md);
+      transform: translateY(-2px);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: var(--warm);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .placeholder-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold-bg);
+      border: 1.5px solid rgba(184,150,62,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .placeholder-icon svg {
+      width: 16px;
+      height: 16px;
+      color: var(--gold);
+    }
+    .placeholder-text {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--stone);
+    }
+
+    .video-meta {
+      padding: 14px 18px 16px;
+      border-top: 1px solid var(--border);
+    }
+    .video-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--stone);
+      margin-bottom: 4px;
+    }
+    .video-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    /* DIVIDER */
+    .series-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 56px;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .video-grid { grid-template-columns: 1fr; }
+      .series-title { font-size: 1.2rem; }
+      header h1 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <span class="doc-label">Video Series</span>
+    <h1>Block <em>175</em></h1>
+    <p class="header-sub">325 N Church Ave &nbsp;·&nbsp; Tucson, AZ 85701</p>
+  </header>
+
+  <!-- ══════════════════════════════════
+       SERIES 1
+  ══════════════════════════════════ -->
+  <section class="series">
+    <div class="series-header">
+      <span class="series-num">Series 01</span>
+      <span class="series-title">Desert Office Campus Drone Sequence</span>
+      <span class="series-count">2 Videos</span>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192855287?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Desert Office Campus Drone Sequence 2"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 01 · Video 1</div>
+          <div class="video-name">Desert Office Campus Drone Sequence 2</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192855289?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Desert Office Campus Drone Sequence"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 01 · Video 2</div>
+          <div class="video-name">Desert Office Campus Drone Sequence</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="series-divider"/>
+
+  <!-- ══════════════════════════════════
+       SERIES 2
+  ══════════════════════════════════ -->
+  <section class="series">
+    <div class="series-header">
+      <span class="series-num">Series 02</span>
+      <span class="series-title">Desert Office Campus Drone Flight</span>
+      <span class="series-count">2 Videos</span>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192856339?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Desert Office Campus Drone Flight"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 02 · Video 1</div>
+          <div class="video-name">Desert Office Campus Drone Flight</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192856337?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Desert Office Campus Drone Flight 2"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 02 · Video 2</div>
+          <div class="video-name">Desert Office Campus Drone Flight 2</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="series-divider"/>
+
+  <!-- ══════════════════════════════════
+       SERIES 3
+  ══════════════════════════════════ -->
+  <section class="series">
+    <div class="series-header">
+      <span class="series-num">Series 03</span>
+      <span class="series-title">Drone Flight Into Medical Building</span>
+      <span class="series-count">2 Videos</span>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192856975?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Drone Flight Into Medical Building"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 03 · Video 1</div>
+          <div class="video-name">Drone Flight Into Medical Building</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192856976?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Drone Flight Into Medical Building 2"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 03 · Video 2</div>
+          <div class="video-name">Drone Flight Into Medical Building 2</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="series-divider"/>
+
+  <!-- ══════════════════════════════════
+       SERIES 4
+  ══════════════════════════════════ -->
+  <section class="series">
+    <div class="series-header">
+      <span class="series-num">Series 04</span>
+      <span class="series-title">Mid-Rise Property At Sunset</span>
+      <span class="series-count">2 Videos</span>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192856671?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Mid-Rise Property At Sunset"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 04 · Video 1</div>
+          <div class="video-name">Mid-Rise Property At Sunset</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192856669?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Mid-Rise Property At Sunset 2"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 04 · Video 2</div>
+          <div class="video-name">Mid-Rise Property At Sunset 2</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="series-divider"/>
+
+  <!-- ══════════════════════════════════
+       SERIES 5
+  ══════════════════════════════════ -->
+  <section class="series">
+    <div class="series-header">
+      <span class="series-num">Series 05</span>
+      <span class="series-title">Drone Flight Over Desert Office</span>
+      <span class="series-count">2 Videos</span>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192857219?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Drone Flight Over Desert Office"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 05 · Video 1</div>
+          <div class="video-name">Drone Flight Over Desert Office</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192857216?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Drone Flight Over Desert Office 2"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 05 · Video 2</div>
+          <div class="video-name">Drone Flight Over Desert Office 2</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <hr class="series-divider"/>
+
+  <!-- ══════════════════════════════════
+       SERIES 6
+  ══════════════════════════════════ -->
+  <section class="series">
+    <div class="series-header">
+      <span class="series-num">Series 06</span>
+      <span class="series-title">Student Housing Leasing Lobby</span>
+      <span class="series-count">2 Videos</span>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192857472?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Student Housing Leasing Lobby"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 06 · Video 1</div>
+          <div class="video-name">Student Housing Leasing Lobby</div>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://player.vimeo.com/video/1192857470?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1&amp;muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Student Housing Leasing Lobby 2"></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-label">Series 06 · Video 2</div>
+          <div class="video-name">Student Housing Leasing Lobby 2</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+</body>
+</html>
