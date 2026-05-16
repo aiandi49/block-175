@@ -240,10 +240,72 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 640px) {
-      .video-grid { grid-template-columns: 1fr; }
-      .series-title { font-size: 1.2rem; }
-      header h1 { font-size: 1.9rem; }
+    /* ── MOBILE FIRST ── */
+    @media (max-width: 768px) {
+      .page {
+        padding: 0 16px 80px;
+      }
+
+      /* Header */
+      header {
+        padding: 32px 0 24px;
+        margin-bottom: 32px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .header-sub {
+        font-size: 0.78rem;
+      }
+
+      /* Series block */
+      .series {
+        margin-bottom: 40px;
+      }
+      .series-header {
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+      .series-title {
+        font-size: 1.15rem;
+        width: 100%;
+        order: 2;
+      }
+      .series-num {
+        order: 1;
+      }
+      .series-count {
+        order: 3;
+        margin-left: 0;
+        width: 100%;
+        font-size: 0.65rem;
+      }
+
+      /* Stack videos vertically */
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      /* Card meta */
+      .video-meta {
+        padding: 12px 14px 14px;
+      }
+      .video-name {
+        font-size: 0.95rem;
+      }
+
+      /* Divider spacing */
+      .series-divider {
+        margin: 0 0 40px;
+      }
+    }
+
+    /* Phones under 400px */
+    @media (max-width: 400px) {
+      header h1 { font-size: 1.7rem; }
+      .series-title { font-size: 1.05rem; }
     }
   </style>
 </head>
